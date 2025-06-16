@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".presentation.splashScreen.SplashActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All Recipes"
+                android:textSize="@dimen/_20ssp"
+                android:textColor="@color/black"
+                android:padding="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                app:cardElevation="@dimen/_10sdp">
+
+                <SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="match_parent"
+                    android:theme="@style/ThemeOverlay.Search"
+                    android:queryHint="Search"
+                    android:iconifiedByDefault="false"
+                    android:background="@drawable/search_background"
+                    android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="1"
+                android:layout_margin="@dimen/_10sdp"
+                tools:listitem="@layout/item_rv_main_category"/>
+
+            <TextView
+                android:id="@+id/categoryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category Name"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                android:paddingStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sub_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="1"
+                android:layout_margin="@dimen/_10sdp"
+                tools:listitem="@layout/item_rv_sub_category"/>
+        </LinearLayout>
+
+</RelativeLayout>
